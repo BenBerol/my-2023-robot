@@ -286,62 +286,18 @@ public class RobotContainer {
             swerveDrive.toggleFieldCentric();
           }));
 
+
       fieldCentricButton.onTrue(new InstantCommand(
           () -> {
             System.out.println("FIELD CENTRIC TOGGLED");
             swerveDrive.toggleFieldCentric();
-          }, swerveDrive));
-      
-      balanceChargingStationButton.whileTrue(levelChargingStationCommand);
+          }));
 
-      turtleButton.whileTrue(new RunCommand(() -> swerveDrive.turtle(), swerveDrive));
-
-      pivotUpButton.whileTrue(new RunCommand(() -> pivotSubsystem.setPivotMotor(0.2), pivotSubsystem));
-      pivotUpButton.onFalse(new InstantCommand(() -> pivotSubsystem.setPivotMotor(0), pivotSubsystem));
-
-      pivotDownButton.whileTrue(new RunCommand(() -> pivotSubsystem.setPivotMotorVoltage(-0.1), pivotSubsystem));
-      pivotDownButton.onFalse(new InstantCommand(() -> pivotSubsystem.setPivotMotor(0), pivotSubsystem));
-
-      elevatorUpButton.whileTrue(new RunCommand(() -> elevatorSubsystem.setElevatorMotor(0.9), elevatorSubsystem));
-      elevatorUpButton.onFalse(new InstantCommand(() -> elevatorSubsystem.setElevatorMotor(0), elevatorSubsystem));
-
-      elevatorDownButton.whileTrue(new RunCommand(() -> {
-        elevatorSubsystem.setElevatorMotor(-0.9);
-      }, elevatorSubsystem));
-      elevatorDownButton.onFalse(new InstantCommand(() -> elevatorSubsystem.setElevatorMotor(0), elevatorSubsystem));
-
-      telescopeOutButton.whileTrue(new RunCommand(() -> telescopeSubsystem.setTelescopeMotor(0.5), telescopeSubsystem));
-      telescopeOutButton.onFalse(new InstantCommand(() -> telescopeSubsystem.setTelescopeMotor(0), telescopeSubsystem));
-
-      telescopeInButton.whileTrue(new RunCommand(() -> telescopeSubsystem.setTelescopeMotor(-0.5), telescopeSubsystem));
-      telescopeInButton.onFalse(new InstantCommand(() -> telescopeSubsystem.setTelescopeMotor(0), telescopeSubsystem));
-
-      telescopeSubstation.whileTrue(new RunCommand(() -> telescopeSubsystem.setTelescopePosition(0.6), telescopeSubsystem));
-
-      toggleGrabberButton.onTrue(new InstantCommand(() -> grabberSubsystem.toggle(), grabberSubsystem));
-
-      pivotToTopPegButton.onTrue(new RunCommand(() -> pivotSubsystem.setPivotPosition(0.01), pivotSubsystem));
-      pivotToSubstationButton.onTrue(new RunCommand(() -> pivotSubsystem.setPivotPosition(0), pivotSubsystem));
-      pivotToBottomButton.onTrue(new RunCommand(() -> pivotSubsystem.setPivotPosition(ArmConstants.pivotDownPosition), pivotSubsystem));
-
-      telescopeToOuterButton.onTrue(new RunCommand(() -> {
-        telescopeSubsystem.setTelescopePosition(ArmConstants.telescopeOuterSetpoint);
-      }, telescopeSubsystem));
-
-      telescopeToMiddleButton.onTrue(new RunCommand(() -> {
-        telescopeSubsystem.setTelescopePosition(ArmConstants.telescopeMiddleSetpoint);
-      }, telescopeSubsystem));
-
-      telescopeToInButton.onTrue(new RunCommand(() -> {
-        telescopeSubsystem.setTelescopePosition(0.03);
-      }, telescopeSubsystem));
-
-      elevatorToMiddleButton.onTrue(new RunCommand(() -> elevatorSubsystem.setElevatorHeight(0), elevatorSubsystem));
-
-
-      pivotSubsystem.setDefaultCommand(new RunCommand(() -> {
-        pivotSubsystem.setPivotPosition(pivotSubsystem.getPivotPosition());
-      }, pivotSubsystem));
+      // resetEncoderButton.whileTrue(new RunCommand(
+      //   () -> {
+      //     System.out.println("RESET");
+      //     swerveDrive.resetEncoders();
+      // }, swerveDrive));
 
       alignAtAprilTagButton.whileTrue(alignAtAprilTag);
       alignLeftOfAprilTagButton.whileTrue(alignLeftOfAprilTag);
