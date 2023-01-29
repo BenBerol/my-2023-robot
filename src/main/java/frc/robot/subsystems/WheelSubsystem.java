@@ -90,7 +90,6 @@ public class WheelSubsystem extends SubsystemBase{
             angleSetpoint = 0;
 
         angleMotor.set(angleSetpoint);
-
     }
 
     public CANSparkMax getAngleMotor(){
