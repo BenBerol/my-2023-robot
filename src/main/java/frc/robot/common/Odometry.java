@@ -87,7 +87,7 @@ public class Odometry {
     }
 
     public Pose2d getPose() {
-        System.out.println(odometry.getPoseMeters());
+        // System.out.println(odometry.getPoseMeters());
         return odometry.getPoseMeters();
     }
 
