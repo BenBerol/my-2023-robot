@@ -4,14 +4,10 @@
 
 package frc.robot.commands.autonomous;
 
-import frc.robot.Constants;
-import frc.robot.Constants.DrivetrainSubsystem;
 import frc.robot.commands.FollowTrajectoryCommand;
 import frc.robot.common.Odometry;
 import frc.robot.subsystems.SwerveDriveSubsystem;
 
-import java.time.Instant;
-import java.util.ArrayList;
 import java.util.HashMap;
 import com.pathplanner.lib.PathConstraints;
 import com.pathplanner.lib.PathPlanner;
@@ -21,18 +17,10 @@ import com.pathplanner.lib.PathPoint;
 import com.pathplanner.lib.PathConstraints;
 import com.pathplanner.lib.PathPlanner;
 import com.pathplanner.lib.PathPlannerTrajectory;
-import com.pathplanner.lib.commands.PPSwerveControllerCommand;
-
-import edu.wpi.first.math.controller.PIDController;
-import edu.wpi.first.math.controller.ProfiledPIDController;
-import edu.wpi.first.math.geometry.Pose2d;
-import edu.wpi.first.math.geometry.Rotation2d;
-import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.trajectory.Trajectory;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 
 /** An example command that uses an example subsystem. */
 public class ChargeCommand extends SequentialCommandGroup {
