@@ -107,4 +107,9 @@ public final class Constants {
         public final static double WHITE = 0.93;
         public final static double GOLD = 0.67;
     }
+
+    public final static class DriverConstants {
+        public final static double speedMultiplier = 5;
+        public final static double angleMultiplier = 1.0 / 32;
+    }
 }
