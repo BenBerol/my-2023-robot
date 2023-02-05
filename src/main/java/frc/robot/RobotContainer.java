@@ -268,7 +268,6 @@ public class RobotContainer {
       // JoystickButton alignLeftSubstationButton = new JoystickButton(leftJoystick, 3);
       // JoystickButton alignRightSubstationButton = new JoystickButton(leftJoystick, 4);
 
-
       swerveDrive.setDefaultCommand(new RunCommand(
           () -> {
             if (robot.isTeleopEnabled()) {
