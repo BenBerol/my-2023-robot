@@ -149,6 +149,7 @@ public class RobotContainer {
 
     private TalonFX elevatorMotor = new TalonFX(ElevatorConstants.ELEVATOR_MOTOR_ID);
     private ElevatorSubsystem elevatorSubsystem = new ElevatorSubsystem(elevatorMotor);
+    private LimelightSubsystem limelight = new LimelightSubsystem();
 
     // LOAD TRAJECTORIES
     private final TrajectoryLoader trajectoryLoader = new TrajectoryLoader();
