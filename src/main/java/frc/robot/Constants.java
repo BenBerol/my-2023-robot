@@ -110,6 +110,6 @@ public final class Constants {
 
     public final static class DriverConstants {
         public final static double speedMultiplier = 3;
-        public final static double angleMultiplier = 2.5 / 32;
+        public final static double angleMultiplier = 3;
     }
 }
