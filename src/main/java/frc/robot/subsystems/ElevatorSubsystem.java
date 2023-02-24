@@ -61,5 +61,10 @@ public class ElevatorSubsystem extends SubsystemBase {
 
 
     }
+
+    public void setElevatorHeight(double pos) {
+
+
+    }
     
 }
