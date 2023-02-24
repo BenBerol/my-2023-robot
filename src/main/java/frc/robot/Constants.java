@@ -39,7 +39,7 @@ public final class Constants {
         public final static int FRONT_RIGHT_SPEED_ID = 6;
         public final static int FRONT_RIGHT_ANGLE_ID = 5;
         public final static int FRONT_RIGHT_ENCODER = 2;
-        public final static double FRONT_RIGHT_ENCODER_OFFSET = 0.142;
+        public final static double FRONT_RIGHT_ENCODER_OFFSET = 0.141;
 
         public final static int FRONT_LEFT_SPEED_ID = 8;
         public final static int FRONT_LEFT_ANGLE_ID = 7;

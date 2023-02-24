@@ -4,7 +4,6 @@
 
 package frc.robot;
 
-import java.lang.System.Logger.Level;
 import java.util.HashMap;
 
 import java.util.HashMap;
@@ -31,8 +30,6 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
-import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -320,7 +317,7 @@ public class RobotContainer {
     }
 
     public Odometry getOdometry() {
-      return null;
+      return odometry;
     }
 
     public SwerveDriveSubsystem getSwerveDriveSubsystem() {
