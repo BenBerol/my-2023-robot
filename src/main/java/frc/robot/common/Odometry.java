@@ -67,7 +67,9 @@ public class Odometry {
 
         if (limelight.getIsDetecting()){
             reset(new Pose2d(new Translation2d(limelight.getYDistance(), -limelight.getXDistance()),
-                limelight.getRotationToTargetPlane().unaryMinus()));
+            this.getPose().getRotation()));
+
+        
         }
 
         modulePositions = newPositions;
