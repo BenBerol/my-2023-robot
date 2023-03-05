@@ -272,9 +272,9 @@ public class RobotContainer {
             if (robot.isTeleopEnabled()) {
               m_LightSubsytem.teleopLights();
               swerveDrive.drive(
-                  applyDeadband(leftJoystick.getY(), DrivetrainConstants.DRIFT_DEADBAND) * DriverConstants.speedMultiplier,
-                  applyDeadband(leftJoystick.getX(),DrivetrainConstants.DRIFT_DEADBAND) * DriverConstants.speedMultiplier,
-                  applyDeadband(rightJoystick.getX() * DriverConstants.angleMultiplier, DrivetrainConstants.ROTATION_DEADBAND));
+                  applyDeadband(-leftJoystick.getY(), DrivetrainConstants.DRIFT_DEADBAND) * DriverConstants.speedMultiplier,
+                  applyDeadband(-leftJoystick.getX(),DrivetrainConstants.DRIFT_DEADBAND) * DriverConstants.speedMultiplier,
+                  applyDeadband(-rightJoystick.getX() * DriverConstants.angleMultiplier, DrivetrainConstants.ROTATION_DEADBAND));
             } else {
               swerveDrive.drive(0, 0, 0);
             }
@@ -352,6 +352,18 @@ public class RobotContainer {
 
     public void periodic() {
       
+    }
+
+    public void buildAutoEventMap(){
+
+      eventMap.put("pickUpBall",
+        new SequentialCommandGroup(
+          new InstantCommand(() -> grabberSubsystem.grab()),
+          new WaitCommand(0.1),
+          new RunCommand(() -> pivotSubsystem.setPivotPosition(0.99))));
+
+      eventMap.put("telescopeOut",
+        new RunCommand(() -> telescopeSubsystem.setTelescopePosition(ArmConstants.telescopeOuterSetpoint)));
     }
 
     public void buildAutoEventMap(){
