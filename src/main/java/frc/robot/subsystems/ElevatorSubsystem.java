@@ -61,14 +61,5 @@ public class ElevatorSubsystem extends SubsystemBase {
 
 
     }
-
-    public void setElevatorHeight(double pos) {
-
-        double offset = Math.cos(2*Math.PI*ntArmAngle.getDouble(0)) * ntArmLength.getDouble(0);
-
-        elevatorMotor.set(ControlMode.Position, pos - offset);
-
-
-    }
     
 }

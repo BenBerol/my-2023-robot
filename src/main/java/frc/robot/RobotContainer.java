@@ -365,16 +365,4 @@ public class RobotContainer {
       eventMap.put("telescopeOut",
         new RunCommand(() -> telescopeSubsystem.setTelescopePosition(ArmConstants.telescopeOuterSetpoint)));
     }
-
-    public void buildAutoEventMap(){
-
-      eventMap.put("pickUpBall",
-        new SequentialCommandGroup(
-          new InstantCommand(() -> grabberSubsystem.grab()),
-          new WaitCommand(0.1),
-          new RunCommand(() -> pivotSubsystem.setPivotPosition(0.99))));
-
-      eventMap.put("telescopeOut",
-        new RunCommand(() -> telescopeSubsystem.setTelescopePosition(ArmConstants.telescopeOuterSetpoint)));
-    }
 }

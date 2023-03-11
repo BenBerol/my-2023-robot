@@ -43,16 +43,5 @@ public class GrabberSubsystem extends SubsystemBase {
     public boolean getGrabberClosed() {
         return grabberClosed;
     }
-
-    public void grab(){
-        leftSolenoid.set(Value.kReverse);
-        rightSolenoid.set(Value.kReverse);
-    }
-
-    public void open() {
-        leftSolenoid.set(Value.kForward);
-        rightSolenoid.set(Value.kForward);
-        
-    }
     
 }
